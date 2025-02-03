@@ -61,6 +61,13 @@ def record_movie( duration = '5s', download = True ) :
     
     return gphoto( command_line )
 
+def get_picture( filename = None ) :
+	
+	if filename is None :
+		return gphoto( [ '--capture-image-and-download', ])
+	
+	else :
+		return gphoto( [ '--capture-image-and-download', '--filename=' + filename ])
 
 def ls( folder = picture_folder ) :
     
